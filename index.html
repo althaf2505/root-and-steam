@@ -1,0 +1,457 @@
+
+<div class="rs-site">
+  <style>
+    .rs-site {
+      --green: #23783c;
+      --deep: #163d2b;
+      --lime: #e8f3df;
+      --cream: #faf6ed;
+      --text: #20382b;
+      --muted: #68756b;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: #fff;
+      overflow: hidden;
+    }
+    .rs-site * { box-sizing: border-box; }
+    .rs-site a { text-decoration: none; }
+    .rs-site img { width: 100%; display: block; object-fit: cover; }
+    .rs-wrap { max-width: 1120px; margin: auto; padding: 0 22px; }
+    .rs-section { padding: 66px 0; }
+    .rs-kicker {
+      display: inline-block; color: var(--green);
+      background: var(--lime); border-radius: 50px;
+      padding: 5px 13px; font-size: 12px;
+      font-weight: bold; letter-spacing: .5px;
+    }
+    .rs-title {
+      font-size: clamp(27px, 4vw, 40px);
+      line-height: 1.17; letter-spacing: -1.2px;
+      margin: 13px 0; color: var(--deep);
+    }
+    .rs-sub { color: var(--muted); margin: 0; }
+    .rs-btn {
+      display: inline-block; text-align: center;
+      border-radius: 50px; padding: 15px 23px;
+      background: var(--green); color: #fff !important;
+      font-size: 14px; font-weight: bold;
+      box-shadow: 0 7px 20px #23783c2b;
+      transition: transform .2s, background .2s;
+    }
+    .rs-btn:hover { transform: translateY(-3px); background: #185b2d; }
+    .rs-header {
+      padding: 15px 0; border-bottom: 1px solid #edf0e8;
+      background: #fff;
+    }
+    .rs-nav {
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .rs-brand { color: var(--deep); font-size: 21px; font-weight: 800; }
+    .rs-brand small { display: block; font-size: 10px; font-weight: 400;
+      color: var(--muted); letter-spacing: 1px; }
+    .rs-links { display: flex; gap: 19px; flex-wrap: wrap; }
+    .rs-links a { font-size: 12px; color: var(--text); }
+    .rs-links a:hover { color: var(--green); }
+    .rs-header .rs-btn { padding: 10px 17px; font-size: 12px; }
+
+    /* HERO */
+    .rs-hero {
+      background: linear-gradient(110deg, #fbf8ef 0%, #f6f1e5 50%, #e5eadb 100%);
+      padding: 52px 0;
+    }
+    .rs-hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 36px; align-items: center;
+    }
+    .rs-hero h1 {
+      font-size: clamp(35px, 5.2vw, 57px);
+      line-height: 1.04; letter-spacing: -2px;
+      color: var(--deep); margin: 19px 0;
+    }
+    .rs-hero p { max-width: 470px; font-size: 15px; color: #566258; }
+    .rs-hero .rs-btn { margin-top: 15px; }
+    .rs-hero-img { position: relative; }
+    .rs-hero-img img {
+      height: 390px; border-radius: 28px;
+      box-shadow: 0 20px 55px #263c2522;
+    }
+    .rs-stamp {
+      position: absolute; right: -10px; bottom: 20px;
+      border-radius: 18px; padding: 13px 18px;
+      color: white; background: var(--green);
+      font-size: 13px; font-weight: bold;
+      box-shadow: 0 8px 20px #0002;
+    }
+    .rs-points { display: flex; gap: 16px; flex-wrap: wrap;
+      margin-top: 24px; font-size: 12px; color: #566258; }
+    .rs-points span { background: #ffffffb8; padding: 8px 12px;
+      border-radius: 30px; }
+
+    /* BENEFITS */
+    .rs-benefits { background: var(--cream); text-align: center; }
+    .rs-benefit-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px; margin-top: 32px;
+    }
+    .rs-benefit {
+      background: #fff; padding: 27px 20px;
+      border: 1px solid #f0ece3; border-radius: 20px;
+      box-shadow: 0 7px 22px #493d1b09;
+    }
+    .rs-icon {
+      width: 62px; height: 62px; display: grid;
+      place-items: center; margin: 0 auto 15px;
+      border-radius: 50%; background: #f7e8cd;
+      font-size: 28px;
+    }
+    .rs-benefit h3 { font-size: 17px; margin: 8px 0; }
+    .rs-benefit p { color: var(--muted); font-size: 13px; margin: 0; }
+
+    /* MENU */
+    .rs-menu-head { display: flex; align-items: end;
+      justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .rs-menu-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 17px; margin-top: 28px;
+    }
+    .rs-card {
+      overflow: hidden; border-radius: 19px;
+      border: 1px solid #eeeae2; background: white;
+      box-shadow: 0 8px 24px #273c2210;
+      transition: transform .2s;
+    }
+    .rs-card:hover { transform: translateY(-4px); }
+    .rs-card img { height: 175px; }
+    .rs-card-body { padding: 15px; }
+    .rs-card h3 { margin: 0 0 5px; font-size: 15px; line-height: 1.4; }
+    .rs-price { color: var(--green); font-size: 17px; font-weight: 800; }
+    .rs-card p { font-size: 12px; color: var(--muted); min-height: 55px; }
+    .rs-order-link { display: block; margin-top: 10px; font-size: 12px;
+      text-align: center; padding: 10px; border-radius: 10px;
+      background: var(--lime); color: var(--green); font-weight: bold; }
+
+    /* ORDER STEPS */
+    .rs-steps-section { background: #f5f8ef; }
+    .rs-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 25px; margin-top: 32px;
+    }
+    .rs-step { position: relative; padding: 22px;
+      background: white; border-radius: 18px;
+      border: 1px solid #e7eddf; }
+    .rs-step-number { color: var(--green); font-weight: 800;
+      font-size: 12px; letter-spacing: 1px; }
+    .rs-step h3 { margin: 9px 0; font-size: 18px; }
+    .rs-step p { color: var(--muted); font-size: 13px; margin-bottom: 0; }
+
+    /* ORDER FORM */
+    .rs-order { background: #fff; }
+    .rs-order-box {
+      display: grid; grid-template-columns: .8fr 1.2fr;
+      gap: 30px; align-items: center;
+      background: #eef6e9; border: 1px solid #e0ead8;
+      border-radius: 26px; padding: 32px;
+      box-shadow: 0 12px 36px #213b2110;
+    }
+    .rs-order-photo img { height: 340px; border-radius: 18px; }
+    .rs-form h2 { font-size: 26px; margin: 0 0 8px; color: var(--deep); }
+    .rs-form > p { font-size: 13px; color: var(--muted); }
+    .rs-form label { display: block; font-size: 12px;
+      font-weight: bold; margin: 12px 0 6px; }
+    .rs-form input, .rs-form select {
+      width: 100%; min-width: 0; padding: 13px;
+      border: 1px solid #dce5d7; border-radius: 11px;
+      background: #fff; color: var(--text); font: inherit;
+      font-size: 13px; outline-color: var(--green);
+    }
+    .rs-form .rs-btn { width: 100%; border: 0; cursor: pointer; margin-top: 18px; }
+    .rs-form-note { font-size: 11px !important; color: #6d796d !important; }
+
+    /* FOOTER */
+    .rs-footer { background: #173c2c; color: #fff; padding: 36px 0 25px; }
+    .rs-footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 24px; }
+    .rs-footer h3 { font-size: 20px; margin: 0 0 8px; }
+    .rs-footer p, .rs-footer a { font-size: 12px; color: #d6e5d8; }
+    .rs-footer a:hover { color: white; }
+    .rs-copy { border-top: 1px solid #ffffff25; margin-top: 25px;
+      padding-top: 18px; text-align: center; color: #cad8cb; font-size: 11px; }
+
+    /* STICKY MOBILE CTA */
+    .rs-sticky { display: none; }
+    @keyframes rs-pulse {
+      0%, 100% { box-shadow: 0 5px 18px #23783c35; }
+      50% { box-shadow: 0 5px 24px #23783c70; }
+    }
+    @media (max-width: 760px) {
+      .rs-wrap { padding-left: 17px; padding-right: 17px; }
+      .rs-section { padding: 45px 0; }
+      .rs-header { padding: 12px 0; }
+      .rs-nav { gap: 10px; }
+      .rs-links { width: 100%; justify-content: space-between; gap: 9px; }
+      .rs-links a { font-size: 11px; }
+      .rs-hero { padding: 35px 0; }
+      .rs-hero-grid { grid-template-columns: 1fr; gap: 25px; }
+      .rs-hero h1 { font-size: 40px; }
+      .rs-hero p { font-size: 14px; }
+      .rs-hero-img img { height: 270px; }
+      .rs-stamp { right: 8px; bottom: 12px; }
+      .rs-benefit-grid { grid-template-columns: 1fr; gap: 13px; }
+      .rs-benefit { display: grid; grid-template-columns: 55px 1fr;
+        column-gap: 13px; text-align: left; padding: 18px; }
+      .rs-icon { grid-row: span 2; width: 52px; height: 52px;
+        font-size: 23px; margin: 0; }
+      .rs-benefit h3 { margin: 0 0 4px; }
+      .rs-benefit p { font-size: 12px; }
+      .rs-menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .rs-card img { height: 135px; }
+      .rs-card-body { padding: 11px; }
+      .rs-card h3 { font-size: 13px; }
+      .rs-card p { font-size: 11px; min-height: 67px; }
+      .rs-price { font-size: 15px; }
+      .rs-steps { grid-template-columns: 1fr; gap: 13px; }
+      .rs-step { padding: 19px; }
+      .rs-order-box { grid-template-columns: 1fr; padding: 18px; gap: 22px; }
+      .rs-order-photo img { height: 210px; }
+      .rs-form h2 { font-size: 23px; }
+      .rs-footer-grid { grid-template-columns: 1fr; gap: 15px; }
+      .rs-sticky { display: block; position: fixed; z-index: 999;
+        bottom: 12px; left: 12px; right: 12px; text-align: center;
+        animation: rs-pulse 2.4s infinite; }
+      .rs-sticky a { display: block; border-radius: 50px;
+        background: #20763a; color: white; font-size: 14px;
+        font-weight: bold; padding: 14px; box-shadow: 0 5px 20px #0002; }
+      .rs-footer { padding-bottom: 85px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rs-site *, .rs-site *::before, .rs-site *::after {
+        animation: none !important; transition: none !important;
+      }
+    }
+  </style>
+
+  <!-- HEADER -->
+  <header class="rs-header">
+    <div class="rs-wrap rs-nav">
+      <a class="rs-brand" href="#rs-home">🌿 Root &amp; Steam
+        <small>HEALTHY FOOD, BETTER YOU</small>
+      </a>
+      <nav class="rs-links" aria-label="Navigasi">
+        <a href="#rs-home">Beranda</a>
+        <a href="#rs-menu">Menu</a>
+        <a href="#rs-cara">Cara Pesan</a>
+        <a href="#rs-kontak">Kontak</a>
+      </nav>
+      <a class="rs-btn" href="https://wa.me/081519204077?text=Halo%20Root%20%26%20Steam%2C%20saya%20ingin%20memesan.">☏ Pesan Sekarang</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="rs-hero" id="rs-home">
+    <div class="rs-wrap rs-hero-grid">
+      <div>
+        <span class="rs-kicker">🌱 MAKANAN SEHAT · HIDUP LEBIH BAIK</span>
+        <h1>Root &amp; Steam:<br>Sehat &amp; Praktis<br>Tanpa Minyak.</h1>
+        <p>Makanan rebusan dan kukusan harian untuk mahasiswa dan pekerja sibuk. Pilihan praktis dengan harga mahasiswa, siap ambil tanpa antre!</p>
+        <a class="rs-btn" href="https://wa.me/081519204077?text=Halo%20Root%20%26%20Steam%2C%20saya%20ingin%20pre-order%20makanan.">☏ Pesan Sekarang via WhatsApp →</a>
+        <div class="rs-points">
+          <span>🌿 Sehat &amp; Bergizi</span>
+          <span>♡ Rasa Lezat</span>
+          <span>⚡ Praktis &amp; Cepat</span>
+        </div>
+      </div>
+      <div class="rs-hero-img">
+        <img src="https://cdn.corenexis.com/f/nGfQTVcixkL.png" alt="Hidangan sehat dengan sayuran segar">
+        <div class="rs-stamp">Fresh · Healthy<br>Good Food, Good Mood!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="rs-section rs-benefits">
+    <div class="rs-wrap">
+      <span class="rs-kicker">KENAPA ROOT &amp; STEAM?</span>
+      <h2 class="rs-title">Sehat Itu Bisa Sesimpel Ini.</h2>
+      <p class="rs-sub">Makan enak, hidup lebih seimbang, tanpa bikin jadwalmu berantakan.</p>
+      <div class="rs-benefit-grid">
+        <article class="rs-benefit">
+          <div class="rs-icon">🌿</div>
+          <h3>100% Bebas Minyak</h3>
+          <p>Menu kukus dan rebus untuk pilihan makan yang lebih ringan dan praktis.</p>
+        </article>
+        <article class="rs-benefit">
+          <div class="rs-icon">♡</div>
+          <h3>Harga Mahasiswa</h3>
+          <p>Pilihan menu mulai Rp15.000, cocok untuk makan siang sehari-hari.</p>
+        </article>
+        <article class="rs-benefit">
+          <div class="rs-icon">◷</div>
+          <h3>Express Pick-Up</h3>
+          <p>Pesan lebih awal dan ambil di booth kampus sesuai jam yang tersedia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="rs-section" id="rs-menu">
+    <div class="rs-wrap">
+      <div class="rs-menu-head">
+        <div>
+          <span class="rs-kicker">MENU PILIHAN</span>
+          <h2 class="rs-title">Nikmati Menu Sehat Kami.</h2>
+          <p class="rs-sub">Sederhana, bergizi, dan pastinya lezat!</p>
+        </div>
+        <p class="rs-sub">🌱 Freshly prepared with care</p>
+      </div>
+
+      <div class="rs-menu-grid">
+        <article class="rs-card">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Paket ayam dan sayuran">
+          <div class="rs-card-body">
+            <h3>Paket Ayam Kukus Sayur</h3>
+            <div class="rs-price">Rp17.000</div>
+            <p>Ayam kukus, brokoli, wortel, dan sayuran segar.</p>
+            <a class="rs-order-link" href="https://wa.me/081519204077?text=Halo%2C%20saya%20ingin%20pesan%20Paket%20Ayam%20Kukus%20Sayur.">Pesan menu →</a>
+          </div>
+        </article>
+        <article class="rs-card">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Menu sayur dan ubi">
+          <div class="rs-card-body">
+            <h3>Paket Ubi &amp; Telur</h3>
+            <div class="rs-price">Rp15.000</div>
+            <p>Ubi kukus, telur rebus, dan sayuran hijau.</p>
+            <a class="rs-order-link" href="https://wa.me/081519204077?text=Halo%2C%20saya%20ingin%20pesan%20Paket%20Ubi%20dan%20Telur.">Pesan menu →</a>
+          </div>
+        </article>
+        <article class="rs-card">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Menu ikan dan sayuran">
+          <div class="rs-card-body">
+            <h3>Paket Ikan Kukus</h3>
+            <div class="rs-price">Rp20.000</div>
+            <p>Ikan kukus dengan sayuran sebagai pelengkap.</p>
+            <a class="rs-order-link" href="https://wa.me/081519204077?text=Halo%2C%20saya%20ingin%20pesan%20Paket%20Ikan%20Kukus.">Pesan menu →</a>
+          </div>
+        </article>
+        <article class="rs-card">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Menu tahu dan sayuran">
+          <div class="rs-card-body">
+            <h3>Paket Tahu Kukus</h3>
+            <div class="rs-price">Rp15.000</div>
+            <p>Tahu kukus dengan sayuran segar yang lezat.</p>
+            <a class="rs-order-link" href="https://wa.me/081519204077?text=Halo%2C%20saya%20ingin%20pesan%20Paket%20Tahu%20Kukus.">Pesan menu →</a>
+          </div>
+        </article>
+      </div>
+      <p class="rs-sub" style="font-size:11px;margin-top:15px">*Foto ilustrasi. Harga dan komposisi menu dapat disesuaikan dengan produk aktual.</p>
+    </div>
+  </section>
+
+  <!-- HOW TO ORDER -->
+  <section class="rs-section rs-steps-section" id="rs-cara">
+    <div class="rs-wrap">
+      <span class="rs-kicker">MUDAH, CEPAT, PRAKTIS</span>
+      <h2 class="rs-title">Cara Pesan.</h2>
+      <p class="rs-sub">Tiga langkah simpel untuk menikmati makananmu.</p>
+      <div class="rs-steps">
+        <article class="rs-step">
+          <div class="rs-icon">📱</div>
+          <span class="rs-step-number">LANGKAH 01</span>
+          <h3>Pre-Order</h3>
+          <p>Pilih menu favorit dan tentukan jam pengambilan yang kamu inginkan.</p>
+        </article>
+        <article class="rs-step">
+          <div class="rs-icon">💬</div>
+          <span class="rs-step-number">LANGKAH 02</span>
+          <h3>Konfirmasi WhatsApp</h3>
+          <p>Kirim detail pesanan dan tunggu konfirmasi dari admin mengenai pembayaran.</p>
+        </article>
+        <article class="rs-step">
+          <div class="rs-icon">🛍️</div>
+          <span class="rs-step-number">LANGKAH 03</span>
+          <h3>Express Pick-Up</h3>
+          <p>Datang ke booth Root &amp; Steam dan ambil pesanan sesuai waktu yang disepakati.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK ORDER -->
+  <section class="rs-section rs-order" id="rs-order">
+    <div class="rs-wrap">
+      <div class="rs-order-box">
+        <div class="rs-order-photo">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="Pilihan makanan sehat Root and Steam">
+          <h3 style="color:#234a2e">Lebih Sehat, Lebih Produktif 🌱</h3>
+          <p class="rs-sub">Isi detail pesananmu, lalu lanjutkan melalui WhatsApp.</p>
+        </div>
+        <div class="rs-form">
+          <h2>Form Pemesanan Cepat</h2>
+          <p>Siapkan detail pesananmu sebelum menghubungi admin.</p>
+
+          <form action="https://wa.me/081519204077" method="get" target="_blank">
+            <label for="rs-name">Nama Lengkap</label>
+            <input id="rs-name" type="text" placeholder="Contoh: Budi Santoso" autocomplete="name" required>
+
+            <label for="rs-phone">No. WhatsApp</label>
+            <input id="rs-phone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel" required>
+
+            <label for="rs-menu-choice">Pilih Menu</label>
+            <select id="rs-menu-choice" required>
+              <option value="">Pilih menu favorit</option>
+              <option>Paket Ayam Kukus Sayur - Rp17.000</option>
+              <option>Paket Ubi &amp; Telur - Rp15.000</option>
+              <option>Paket Ikan Kukus - Rp20.000</option>
+              <option>Paket Tahu Kukus - Rp15.000</option>
+            </select>
+
+            <label for="rs-time">Jam Ambil</label>
+            <select id="rs-time" required>
+              <option value="">Pilih jam pengambilan</option>
+              <option>11.30</option>
+              <option>12.00</option>
+              <option>12.30</option>
+            </select>
+
+            <button class="rs-btn" type="submit">☏ Konfirmasi Pesanan (Lanjut ke WA) →</button>
+          </form>
+          <p class="rs-form-note">Catatan: form ini merupakan tampilan awal. Untuk mengirim seluruh isian form secara otomatis ke pesan WhatsApp, diperlukan JavaScript atau layanan form tambahan. Tombol menu di atas sudah membuka chat dengan pesan awal yang sesuai.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rs-footer" id="rs-kontak">
+    <div class="rs-wrap">
+      <div class="rs-footer-grid">
+        <div>
+          <h3>🌿 Root &amp; Steam</h3>
+          <p>Healthy Food, Better You.</p>
+          <p>Makan lebih seimbang, jalani hari lebih berenergi.</p>
+        </div>
+        <div>
+          <strong>Hubungi Kami</strong>
+          <p>WhatsApp Admin:<br>
+            <a href="https://wa.me/081519204077">+62 812-3456-7890</a>
+          </p>
+          <p>Instagram: <a href="https://instagram.com/zbrn_2505 ">@rootandsteam</a></p>
+          <p>TikTok: <a href="https://tiktok.com/">@rootandsteam</a></p>
+        </div>
+        <div>
+          <strong>Lokasi Kami</strong>
+          <p>📍 Area Kampus Universitas Lampung</p>
+          <p>Pesan terlebih dahulu untuk memastikan jam pengambilan.</p>
+        </div>
+      </div>
+      <div class="rs-copy">© 2026 Root &amp; Steam — Sehat Tanpa Minyak.</div>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA FOR MOBILE -->
+  <div class="rs-sticky">
+    <a href="https://wa.me/081519204077?text=Halo%20Root%20%26%20Steam%2C%20saya%20ingin%20memesan.">☏ Pesan Sekarang via WhatsApp</a>
+  </div>
+</div>
